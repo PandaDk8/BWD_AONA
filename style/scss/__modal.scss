@@ -1,0 +1,139 @@
+
+@mixin popup () {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 100;
+    
+    //center element
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    display: none;
+    .modal-form {
+        @include popup();
+        width: 500px;
+        font-size: 1.6rem;
+        h3 {
+            font-size: 2.4rem;
+            font-family: Arial, Helvetica, sans-serif;
+            color: $text-color;
+            margin-bottom: 6px;
+            margin-top: 4px;
+        }
+        input {
+            width: 100%;
+            border-radius: 5px;
+            padding: 14px 10px;
+            margin-top: 10px;
+            font-size: 1.6rem;
+            &[type="text"], &[type="password"], &[type="email"] {
+                border: 1px solid #969696;
+            }
+            &[type="submit"] {
+                border: none;
+                background: linear-gradient(to bottom, #426AA6, #142739);
+                color: $white-color;
+                cursor: pointer;
+                font-size: 1.8rem;
+            }
+        }
+    }
+}
+
+
+input:active {
+    border: 1px solid $primary-color-bold;
+}
+
+.login {
+    .have-not-account {
+        margin-top: 16px;
+        font-weight: 300px;
+        &__question {
+            color: $text-color;
+        }
+        &__register {
+            color: $primary-color-bold; 
+            cursor: pointer;
+        }
+    }
+    .i-forget-my-password {
+        color: $primary-color-bold;
+        font-style: italic;
+        margin-top: 10px;
+        cursor: pointer;
+        align-self: flex-end;
+        font-size: 1.4rem;
+        font-weight: 400;
+    }
+    .login-other-title {
+        align-self: flex-start;
+        font-size: 2.4rem;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        color: $text-color;
+        margin-top: 12px;
+    }
+    .login-other {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 6px;
+        div {
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            color: $white-color;
+            font-size: 1.8rem;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 0;
+            padding: 8px;
+            border-radius: 3px;
+            width: 32%;
+            cursor: pointer;
+            img {
+                width: 25px;
+                margin-right: 8px;
+            }
+            &.login-by-facebook {
+                background: $facebook-color;
+            }
+            &.login-by-google {
+                background-color: $google-color;
+            }
+            &.login-by-microsoft {
+                background-color: $microsoft-color;
+            }
+        }
+    }
+}
+
+.sign-up {
+    .have-account {
+        margin-top: 16px;
+        font-weight: 300px;
+        &__question {
+            color: $text-color;
+        }
+        &__login {
+            margin-left: 4px;
+            color: $primary-color-bold; 
+            cursor: pointer;
+        }
+    }
+}
